@@ -41,7 +41,7 @@ class Bank:
               "ACCOUNT_NO." : Bank.__accoountgenerate(),
               "BANK_BALANCE" : 0  
           }
-          if info[' AGE '] < 18 or len(str(info[' PIN '])) != 4 :
+          if info['AGE'] < 18 or len(str(info['PIN'])) != 4 :
               print(" YOU CANNOT CREATE THE BAK ACOUNT ")
 
           else:
@@ -57,7 +57,7 @@ class Bank:
          accnumber = input(" PLEASE ENTER YOUR BANK ACCOUNT NO. ")
          pin = int(input(" PLEASE ENTER YOUR PIN AS WELL"))
 
-         userdata = [i for i in Bank.data if i[' ACCOUNT_NO.'] == accnumber and i[' PIN '] == pin]
+         userdata = [i for i in Bank.data if i['ACCOUNT_NO.'] == accnumber and i['PIN'] == pin]
 
          if userdata == False :
              print("SORRY NO DATA FOUND")
@@ -74,7 +74,7 @@ class Bank:
          accnumber = input(" PLEASE ENTER YOUR BANK ACCOUNT NO.")
          pin = int(input(" PLEASE ENTER YOUR PIN AS WELL "))
 
-         userdata = [i for i in Bank.data if i[' ACCOUNT_NO.'] == accnumber and i[' PIN '] == pin]
+         userdata = [i for i in Bank.data if i['ACCOUNT_NO.'] == accnumber and i['PIN'] == pin]
 
          if userdata == False :
              print(" SORRY NO DATA FOUND")
@@ -92,7 +92,7 @@ class Bank:
          accnumber = input(" PLEASE ENTER YOUR BANK ACCOUNT NO.")
          pin = int(input(" PLEASE ENTER YOUR PIN AS WELL "))
 
-         userdata = [i for i in Bank.data if i[' ACCOUNT_NO.'] == accnumber and i[' PIN '] == pin]
+         userdata = [i for i in Bank.data if i['ACCOUNT_NO.'] == accnumber and i['PIN'] == pin]
          print(" YOUR INORMATION ARE : \n\n\n")
          for i in userdata[0]:
              print(f" {i} : {userdata[0][i]} ")
@@ -101,7 +101,7 @@ class Bank:
          accnumber = input(" PLEASE ENTER YOUR BANK ACCOUNT NO.")
          pin = int(input(" PLEASE ENTER YOUR PIN AS WELL "))
 
-         userdata = [i for i in Bank.data if i[' ACCOUNT_NO.'] == accnumber and i[' PIN '] == pin]
+         userdata = [i for i in Bank.data if i['ACCOUNT_NO.'] == accnumber and i['PIN'] == pin]
 
          if userdata == False:
              print(" THIS USER IS NOT FOUND :")
@@ -110,23 +110,23 @@ class Bank:
              print(" FILL THE DETAILS FOR THE CHANGES AND LEAVE IT EMPTY FOR NO CHNAGE :")
 
              newdata = {
-                 " NAME " : input(" PLEASE ENTER YOUR NEW NAME OR PRESS ENTER FOR NO CHANGEMENT : "),
-                 " EMAIL " : input(" PLEASE ENTER YOUR NEW EMAIL OR PRESS ENTER FOR NO CHANGEMENT : "),
-                 " PIN " : input(" PLEASE ENTER YOUR NEW PIN  OR PRESS ENTER FOR NO CHANGEMENT : ")
+                 "NAME" : input(" PLEASE ENTER YOUR NEW NAME OR PRESS ENTER FOR NO CHANGEMENT : "),
+                 "EMAIL" : input(" PLEASE ENTER YOUR NEW EMAIL OR PRESS ENTER FOR NO CHANGEMENT : "),
+                 "PIN" : input(" PLEASE ENTER YOUR NEW PIN  OR PRESS ENTER FOR NO CHANGEMENT : ")
                 }
-             if newdata[" NAME "] == "" :
-                 newdata[" NAME "] = userdata[0][' NAME '] 
-             if newdata[" EMAIL "] == "" :
-                 newdata[" EMAIL "] = userdata[0][' EMAIL ']      
-             if newdata[" PIN "] == "" :
-                 newdata[" PIN "] = userdata[0][' PIN ']
+             if newdata["NAME"] == "" :
+                 newdata["NAME"] = userdata[0]['NAME'] 
+             if newdata["EMAIL"] == "" :
+                 newdata["EMAIL"] = userdata[0]['EMAIL']      
+             if newdata["PIN"] == "" :
+                 newdata["PIN"] = userdata[0]['PIN']
 
-             newdata [' AGE '] = userdata[0][' AGE ']
-             newdata [' ACCOUNT_NO.'] = userdata[0][' ACCOUNT_NO.']
+             newdata ['AGE'] = userdata[0]['AGE']
+             newdata ['ACCOUNT_NO.'] = userdata[0]['ACCOUNT_NO.']
              newdata ['BANK_BALANCE'] = userdata[0]['BANK_BALANCE']
 
              if type(newdata) == str :
-                 newdata[' PIN '] = int(newdata[' PIN '])
+                 newdata['PIN'] = int(newdata['PIN'])
 
              for i in newdata :
                  if newdata[i] == userdata[0][i]:
@@ -139,14 +139,14 @@ class Bank:
                                  
      def delete(self):
          accnumber = input(" PLEASE ENTER YOUR BANK ACCOUNT NO.")
-         pin = int(input(" PLEASE ENTER YOUR PIN AS WELL "))
+         pin = (input(" PLEASE ENTER YOUR PIN AS WELL "))
 
-         userdata = [i for i in Bank.data if i[' ACCOUNT_NO.'] == accnumber and i[' PIN '] == pin]
+         userdata = [i for i in Bank.data if i['ACCOUNT_NO.'] == accnumber and i['PIN'] == pin]
 
          if userdata == False:
              print(" USER NOT FOUND : ")
          else:
-             check= input(" PRESS Y FOR DELTEING IF YIU ACTUALLY WANT TO DELETE THE DATA OR PRESS N : ")
+             check= input(" PRESS Y FOR DELTEING IF YOU ACTUALLY WANT TO DELETE THE DATA OR PRESS N : ")
              if check == 'n' or check == 'N':
                  print(" by pass ")
              else:
